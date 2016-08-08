@@ -234,9 +234,10 @@ def finalize_source(source, format, url_suffix):
         source = smart_escape(source)
         source_to_sign = source
     else:
-        source = unquote(source)
-        if not PY3: source = source.decode('utf8')
-        source = smart_escape(source)
+        # source = unquote(source)
+        # if not PY3:
+        #     source = source.decode('utf8')
+        # source = smart_escape(source)
         source_to_sign = source
         if url_suffix != None:
             if re.search(r'[\./]', url_suffix): raise ValueError("url_suffix should not include . or /")
